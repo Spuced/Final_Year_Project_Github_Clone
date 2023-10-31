@@ -1,0 +1,1 @@
+bin/neo4j-admin database import full --nodes import/exosome_nodes.csv --relationships import/exosome_edges.csv
