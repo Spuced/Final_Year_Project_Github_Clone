@@ -1,0 +1,4 @@
+WITH "file:///exosome_nodes.csv" AS uri
+LOAD CSV WITH HEADERS FROM uri AS row
+MERGE (sample:Sample {id:row.SpecID})
+SET sample.status = toString(row.Status)
