@@ -10152,3 +10152,473 @@ AttributeError: 'RidgeClassifier' object has no attribute 'predict_proba'
 2024-01-17 18:29:28,184:INFO:Defining Hyperparameters
 2024-01-17 18:29:28,275:INFO:Tuning with n_jobs=-1
 2024-01-17 18:29:28,275:INFO:Initializing RandomizedSearchCV
+2024-01-17 18:49:16,305:INFO:best_params: {'actual_estimator__n_estimators': 140, 'actual_estimator__min_samples_split': 10, 'actual_estimator__min_samples_leaf': 6, 'actual_estimator__min_impurity_decrease': 0.001, 'actual_estimator__max_features': 'sqrt', 'actual_estimator__max_depth': 10, 'actual_estimator__criterion': 'entropy', 'actual_estimator__class_weight': 'balanced', 'actual_estimator__bootstrap': False}
+2024-01-17 18:49:16,307:INFO:Hyperparameter search completed
+2024-01-17 18:49:16,307:INFO:SubProcess create_model() called ==================================
+2024-01-17 18:49:16,308:INFO:Initializing create_model()
+2024-01-17 18:49:16,309:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=True, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001A51DAB5F10>, model_only=True, return_train_score=False, error_score=0.0, kwargs={'n_estimators': 140, 'min_samples_split': 10, 'min_samples_leaf': 6, 'min_impurity_decrease': 0.001, 'max_features': 'sqrt', 'max_depth': 10, 'criterion': 'entropy', 'class_weight': 'balanced', 'bootstrap': False})
+2024-01-17 18:49:16,309:INFO:Checking exceptions
+2024-01-17 18:49:16,309:INFO:Importing libraries
+2024-01-17 18:49:16,309:INFO:Copying training dataset
+2024-01-17 18:49:16,435:INFO:Defining folds
+2024-01-17 18:49:16,435:INFO:Declaring metric variables
+2024-01-17 18:49:16,441:INFO:Importing untrained model
+2024-01-17 18:49:16,441:INFO:Declaring custom model
+2024-01-17 18:49:16,447:INFO:Random Forest Classifier Imported successfully
+2024-01-17 18:49:16,457:INFO:Starting cross validation
+2024-01-17 18:49:16,464:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2024-01-17 18:49:41,203:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,203:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,206:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,206:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,207:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,209:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,209:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,210:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,212:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,268:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,268:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,273:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,273:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,276:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,277:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,298:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,303:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,308:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,367:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,370:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,373:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,426:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,429:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,433:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,445:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,448:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,448:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,451:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,452:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,455:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:41,567:INFO:Calculating mean and std
+2024-01-17 18:49:41,569:INFO:Creating metrics dataframe
+2024-01-17 18:49:41,573:INFO:Finalizing model
+2024-01-17 18:49:44,560:INFO:Uploading results into container
+2024-01-17 18:49:44,560:INFO:Uploading model into container now
+2024-01-17 18:49:44,561:INFO:_master_model_container: 17
+2024-01-17 18:49:44,561:INFO:_display_container: 4
+2024-01-17 18:49:44,561:INFO:RandomForestClassifier(bootstrap=False, ccp_alpha=0.0, class_weight='balanced',
+                       criterion='entropy', max_depth=10, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.001, min_samples_leaf=6,
+                       min_samples_split=10, min_weight_fraction_leaf=0.0,
+                       n_estimators=140, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False)
+2024-01-17 18:49:44,561:INFO:create_model() successfully completed......................................
+2024-01-17 18:49:44,643:INFO:SubProcess create_model() end ==================================
+2024-01-17 18:49:44,643:INFO:choose_better activated
+2024-01-17 18:49:44,645:INFO:SubProcess create_model() called ==================================
+2024-01-17 18:49:44,646:INFO:Initializing create_model()
+2024-01-17 18:49:44,646:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2024-01-17 18:49:44,646:INFO:Checking exceptions
+2024-01-17 18:49:44,647:INFO:Importing libraries
+2024-01-17 18:49:44,647:INFO:Copying training dataset
+2024-01-17 18:49:44,719:INFO:Defining folds
+2024-01-17 18:49:44,719:INFO:Declaring metric variables
+2024-01-17 18:49:44,719:INFO:Importing untrained model
+2024-01-17 18:49:44,719:INFO:Declaring custom model
+2024-01-17 18:49:44,720:INFO:Random Forest Classifier Imported successfully
+2024-01-17 18:49:44,720:INFO:Starting cross validation
+2024-01-17 18:49:44,725:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2024-01-17 18:49:53,028:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,031:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,035:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,057:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,058:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,060:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,061:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,063:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,064:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,069:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,072:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,076:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,107:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,113:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,115:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,117:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,118:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,123:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,182:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,182:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,183:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,186:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,187:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,188:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,189:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,189:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,193:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,198:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,202:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,205:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\metrics\_classification.py:1396: UserWarning: Note that pos_label (set to 'Normal') is ignored when average != 'binary' (got 'weighted'). You may use labels=[pos_label] to specify a single positive class.
+  warnings.warn(
+
+2024-01-17 18:49:53,320:INFO:Calculating mean and std
+2024-01-17 18:49:53,321:INFO:Creating metrics dataframe
+2024-01-17 18:49:53,324:INFO:Finalizing model
+2024-01-17 18:49:54,406:INFO:Uploading results into container
+2024-01-17 18:49:54,406:INFO:Uploading model into container now
+2024-01-17 18:49:54,407:INFO:_master_model_container: 18
+2024-01-17 18:49:54,407:INFO:_display_container: 5
+2024-01-17 18:49:54,407:INFO:RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False)
+2024-01-17 18:49:54,407:INFO:create_model() successfully completed......................................
+2024-01-17 18:49:54,476:INFO:SubProcess create_model() end ==================================
+2024-01-17 18:49:54,477:INFO:RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False) result for Accuracy is 0.8245
+2024-01-17 18:49:54,477:INFO:RandomForestClassifier(bootstrap=False, ccp_alpha=0.0, class_weight='balanced',
+                       criterion='entropy', max_depth=10, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.001, min_samples_leaf=6,
+                       min_samples_split=10, min_weight_fraction_leaf=0.0,
+                       n_estimators=140, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False) result for Accuracy is 0.7747
+2024-01-17 18:49:54,477:INFO:RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False) is best model
+2024-01-17 18:49:54,477:INFO:choose_better completed
+2024-01-17 18:49:54,477:INFO:Original model was better than the tuned model, hence it will be returned. NOTE: The display metrics are for the tuned model (not the original one).
+2024-01-17 18:49:54,484:INFO:_master_model_container: 18
+2024-01-17 18:49:54,484:INFO:_display_container: 4
+2024-01-17 18:49:54,484:INFO:RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False)
+2024-01-17 18:49:54,484:INFO:tune_model() successfully completed......................................
+2024-01-17 18:49:54,606:INFO:Initializing evaluate_model()
+2024-01-17 18:49:54,606:INFO:evaluate_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), fold=None, fit_kwargs=None, plot_kwargs=None, feature_name=None, groups=None)
+2024-01-17 18:49:54,638:INFO:Initializing plot_model()
+2024-01-17 18:49:54,639:INFO:plot_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), plot=pipeline, scale=1, save=False, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), fit_kwargs={}, plot_kwargs=None, groups=None, feature_name=None, label=False, verbose=False, system=True, display=None, display_format=None)
+2024-01-17 18:49:54,639:INFO:Checking exceptions
+2024-01-17 18:49:54,675:INFO:Preloading libraries
+2024-01-17 18:49:54,684:INFO:Copying training dataset
+2024-01-17 18:49:54,684:INFO:Plot type: pipeline
+2024-01-17 18:49:54,822:INFO:Visual Rendered Successfully
+2024-01-17 18:49:54,895:INFO:plot_model() successfully completed......................................
+2024-01-17 21:52:06,074:INFO:Initializing plot_model()
+2024-01-17 21:52:06,074:INFO:plot_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), plot=parameter, scale=1, save=False, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), fit_kwargs={}, plot_kwargs=None, groups=None, feature_name=None, label=False, verbose=False, system=True, display=None, display_format=None)
+2024-01-17 21:52:06,075:INFO:Checking exceptions
+2024-01-17 21:52:06,110:INFO:Preloading libraries
+2024-01-17 21:52:06,118:INFO:Copying training dataset
+2024-01-17 21:52:06,118:INFO:Plot type: parameter
+2024-01-17 21:52:06,120:INFO:Visual Rendered Successfully
+2024-01-17 21:52:06,189:INFO:plot_model() successfully completed......................................
+2024-01-17 21:52:14,102:INFO:Initializing plot_model()
+2024-01-17 21:52:14,102:INFO:plot_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), plot=auc, scale=1, save=False, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), fit_kwargs={}, plot_kwargs=None, groups=None, feature_name=None, label=False, verbose=False, system=True, display=None, display_format=None)
+2024-01-17 21:52:14,102:INFO:Checking exceptions
+2024-01-17 21:52:14,136:INFO:Preloading libraries
+2024-01-17 21:52:14,143:INFO:Copying training dataset
+2024-01-17 21:52:14,143:INFO:Plot type: auc
+2024-01-17 21:52:14,440:INFO:Fitting Model
+2024-01-17 21:52:14,441:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but RandomForestClassifier was fitted with feature names
+  warnings.warn(
+
+2024-01-17 21:52:14,441:INFO:Scoring test/hold-out set
+2024-01-17 21:52:14,620:INFO:Visual Rendered Successfully
+2024-01-17 21:52:14,684:INFO:plot_model() successfully completed......................................
+2024-01-17 21:52:17,381:INFO:Initializing plot_model()
+2024-01-17 21:52:17,381:INFO:plot_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), plot=confusion_matrix, scale=1, save=False, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), fit_kwargs={}, plot_kwargs=None, groups=None, feature_name=None, label=False, verbose=False, system=True, display=None, display_format=None)
+2024-01-17 21:52:17,381:INFO:Checking exceptions
+2024-01-17 21:52:17,415:INFO:Preloading libraries
+2024-01-17 21:52:17,422:INFO:Copying training dataset
+2024-01-17 21:52:17,422:INFO:Plot type: confusion_matrix
+2024-01-17 21:52:17,723:INFO:Fitting Model
+2024-01-17 21:52:17,723:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but RandomForestClassifier was fitted with feature names
+  warnings.warn(
+
+2024-01-17 21:52:17,723:INFO:Scoring test/hold-out set
+2024-01-17 21:52:17,864:INFO:Visual Rendered Successfully
+2024-01-17 21:52:17,925:INFO:plot_model() successfully completed......................................
+2024-01-17 21:52:20,872:INFO:Initializing plot_model()
+2024-01-17 21:52:20,873:INFO:plot_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), plot=threshold, scale=1, save=False, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), fit_kwargs={}, plot_kwargs=None, groups=None, feature_name=None, label=False, verbose=False, system=True, display=None, display_format=None)
+2024-01-17 21:52:20,873:INFO:Checking exceptions
+2024-01-17 21:52:22,536:INFO:Initializing plot_model()
+2024-01-17 21:52:22,536:INFO:plot_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), plot=pr, scale=1, save=False, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), fit_kwargs={}, plot_kwargs=None, groups=None, feature_name=None, label=False, verbose=False, system=True, display=None, display_format=None)
+2024-01-17 21:52:22,536:INFO:Checking exceptions
+2024-01-17 21:52:22,571:INFO:Preloading libraries
+2024-01-17 21:52:22,578:INFO:Copying training dataset
+2024-01-17 21:52:22,578:INFO:Plot type: pr
+2024-01-17 21:52:22,875:INFO:Fitting Model
+2024-01-17 21:52:25,401:INFO:Scoring test/hold-out set
+2024-01-17 21:52:25,694:INFO:Visual Rendered Successfully
+2024-01-17 21:52:25,768:INFO:plot_model() successfully completed......................................
+2024-01-17 21:52:25,849:INFO:Initializing plot_model()
+2024-01-17 21:52:25,850:INFO:plot_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), plot=error, scale=1, save=False, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), fit_kwargs={}, plot_kwargs=None, groups=None, feature_name=None, label=False, verbose=False, system=True, display=None, display_format=None)
+2024-01-17 21:52:25,850:INFO:Checking exceptions
+2024-01-17 21:52:25,884:INFO:Preloading libraries
+2024-01-17 21:52:25,891:INFO:Copying training dataset
+2024-01-17 21:52:25,891:INFO:Plot type: error
+2024-01-17 21:52:26,194:INFO:Fitting Model
+2024-01-17 21:52:26,194:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but RandomForestClassifier was fitted with feature names
+  warnings.warn(
+
+2024-01-17 21:52:26,194:INFO:Scoring test/hold-out set
+2024-01-17 21:52:26,373:INFO:Visual Rendered Successfully
+2024-01-17 21:52:26,507:INFO:plot_model() successfully completed......................................
+2024-01-17 21:52:48,124:INFO:Initializing plot_model()
+2024-01-17 21:52:48,124:INFO:plot_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), plot=gain, scale=1, save=False, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), fit_kwargs={}, plot_kwargs=None, groups=None, feature_name=None, label=False, verbose=False, system=True, display=None, display_format=None)
+2024-01-17 21:52:48,124:INFO:Checking exceptions
+2024-01-17 21:52:48,161:INFO:Preloading libraries
+2024-01-17 21:52:48,169:INFO:Copying training dataset
+2024-01-17 21:52:48,169:INFO:Plot type: gain
+2024-01-17 21:52:48,169:INFO:Generating predictions / predict_proba on X_test
+2024-01-17 21:52:50,652:INFO:Initializing plot_model()
+2024-01-17 21:52:50,652:INFO:plot_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), plot=dimension, scale=1, save=False, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), fit_kwargs={}, plot_kwargs=None, groups=None, feature_name=None, label=False, verbose=False, system=True, display=None, display_format=None)
+2024-01-17 21:52:50,652:INFO:Checking exceptions
+2024-01-17 21:52:50,687:INFO:Preloading libraries
+2024-01-17 21:52:50,694:INFO:Copying training dataset
+2024-01-17 21:52:50,694:INFO:Plot type: dimension
+2024-01-17 21:52:50,832:INFO:Fitting StandardScaler()
+2024-01-17 21:52:50,989:INFO:Fitting PCA()
+2024-01-17 21:52:51,329:INFO:Fitting & Transforming Model
+2024-01-17 21:52:51,498:INFO:Visual Rendered Successfully
+2024-01-17 21:52:51,573:INFO:plot_model() successfully completed......................................
+2024-01-17 21:52:52,794:INFO:Initializing plot_model()
+2024-01-17 21:52:52,794:INFO:plot_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), plot=vc, scale=1, save=False, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), fit_kwargs={}, plot_kwargs=None, groups=None, feature_name=None, label=False, verbose=False, system=True, display=None, display_format=None)
+2024-01-17 21:52:52,794:INFO:Checking exceptions
+2024-01-17 21:52:52,834:INFO:Preloading libraries
+2024-01-17 21:52:52,840:INFO:Copying training dataset
+2024-01-17 21:52:52,840:INFO:Plot type: vc
+2024-01-17 21:52:52,840:INFO:Determining param_name
+2024-01-17 21:52:52,841:INFO:param_name: max_depth
+2024-01-17 21:52:53,141:INFO:Fitting Model
+2024-01-17 21:53:38,237:INFO:Visual Rendered Successfully
+2024-01-17 21:53:38,308:INFO:plot_model() successfully completed......................................
+2024-01-17 21:53:38,372:INFO:Initializing plot_model()
+2024-01-17 21:53:38,372:INFO:plot_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001A518534190>, estimator=RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='sqrt',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       n_estimators=100, n_jobs=-1, oob_score=False,
+                       random_state=1234, verbose=0, warm_start=False), plot=confusion_matrix, scale=1, save=False, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), fit_kwargs={}, plot_kwargs=None, groups=None, feature_name=None, label=False, verbose=False, system=True, display=None, display_format=None)
+2024-01-17 21:53:38,372:INFO:Checking exceptions
+2024-01-17 21:53:38,407:INFO:Preloading libraries
+2024-01-17 21:53:38,414:INFO:Copying training dataset
+2024-01-17 21:53:38,414:INFO:Plot type: confusion_matrix
+2024-01-17 21:53:38,740:INFO:Fitting Model
+2024-01-17 21:53:38,740:WARNING:c:\Users\FX 8320\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but RandomForestClassifier was fitted with feature names
+  warnings.warn(
+
+2024-01-17 21:53:38,740:INFO:Scoring test/hold-out set
+2024-01-17 21:53:38,879:INFO:Visual Rendered Successfully
+2024-01-17 21:53:38,965:INFO:plot_model() successfully completed......................................
