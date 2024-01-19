@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-# Read the specta
+# Read the spectra
 exosomes = pd.read_csv('../../data/exosome_edges.csv')
 exosomes[':TYPE'] = "Distance"
 
