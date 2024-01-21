@@ -1,0 +1,6 @@
+CALL gds.graph.project('myGraph', ['Normal', 'Hyperglycemia', 'Hypoglycemia'], 'LINK')
+
+CALL gds.closeness.stream('myGraph')
+YIELD nodeId, score
+RETURN nodeId, score
+ORDER BY score DESC
