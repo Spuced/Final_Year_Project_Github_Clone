@@ -4,3 +4,20 @@ CALL gds.closeness.stream('myGraph')
 YIELD nodeId, score
 RETURN nodeId, score
 ORDER BY score DESC
+
+## Triangle Count
+
+CALL gds.graph.project(
+  'TriGraph',
+  ['Normal', 'Hypoglycemia', 'Hyperglycemia'],
+  {
+    LINK: {
+      orientation: 'UNDIRECTED'
+    }
+  }
+)
+
+CALL gds.triangleCount.stream('TriGraph')
+YIELD nodeId, triangleCount
+RETURN nodeId, triangleCount
+ORDER BY triangleCount DESC
