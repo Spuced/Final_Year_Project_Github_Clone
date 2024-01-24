@@ -3,3 +3,5 @@ bin/neo4j-admin database import full --nodes import/exosome_nodes.csv --relation
 bin/neo4j-admin database import full --nodes=import/peak_nodes.csv --relationships=import/grid_rels.csv neo4j
 
 bin/neo4j-admin database import full --nodes import/peak_nodes.csv --relationships import/peak_edges.csv
+
+neo4j-admin database import full --nodes=import/nodes.csv --relationships=import/edges.csv neo4j
