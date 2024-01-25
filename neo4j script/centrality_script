@@ -21,3 +21,15 @@ CALL gds.triangleCount.stream('TriGraph')
 YIELD nodeId, triangleCount
 RETURN nodeId, triangleCount
 ORDER BY triangleCount DESC
+
+## Exosome Peak Graph DMBS 1.2
+
+## Betweenness Centrality
+
+CALL gds.graph.project('BetweenGraph', ['Normal', 'Hypoglycemia', 'Hyperglycemia'], {LINK: {properties: 'DIST'}})
+
+
+CALL gds.betweenness.stream('BetweenGraph')
+YIELD nodeId, score
+RETURN gds.util.asNode(nodeId).Node_ID AS Name, score
+ORDER BY Name ASC
