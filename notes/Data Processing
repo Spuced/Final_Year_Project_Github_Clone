@@ -1,0 +1,10 @@
+In final project, values should be scaled based on the training sets alone.
+
+
+lam = 10**3
+p = 0.05  
+window_size = 9
+poly_order = 2
+
+RandomForestClassifier Cross-Validation Accuracy: 0.8943 +/- 0.0147
+ExtraTreesClassifier Cross-Validation Accuracy: 0.9002 +/- 0.0164
