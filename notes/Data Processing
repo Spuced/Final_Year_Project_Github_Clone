@@ -1,5 +1,6 @@
 In final project, values should be scaled based on the training sets alone.
 
+Fix the spike removal NaNs
 
 lam = 10**3
 p = 0.05  
