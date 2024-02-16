@@ -22,3 +22,9 @@ bins = 200
 
 RandomForestClassifier Cross-Validation Accuracy: 0.9297 +/- 0.0107
 ExtraTreesClassifier Cross-Validation Accuracy: 0.9498 +/- 0.0093
+
+
+AUC scaling
+ExtraTreesClassifier Cross-Validation Accuracy: 0.9507 +/- 0.0081
+ExtraTreesClassifier Cross-Validation Accuracy: 0.9511 +/- 0.0077
+
