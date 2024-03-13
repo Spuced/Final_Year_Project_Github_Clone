@@ -12,7 +12,6 @@ This project aims to test the use of feature engineering and graph databases to 
 
 - [**`archive`**](./archive): Contains old notebooks that have been superceded.
 - [**`docs`**](./docs): Contains project documentation.
-- [**`feature_engineering_400-1800cm-1`**](./feature_engineering_400-1800cm-1): Contains the code for spectral cleaning, feature engineering and traditional machine learning, within the 400-1800 cm-1 range.
 - [**`feature_engineering`**](./feature_engineering): Contains the code for spectral cleaning, feature engineering and traditional machine learning.
 - [**`graph_database`**](./graph_database): Contains the notebooks used to create the graph structures, and extract metrics from Neo4j.
 - [**`neo4j_script`**](./neo4j_script): Contains Neo4j queries used to interact with the graph databases.
