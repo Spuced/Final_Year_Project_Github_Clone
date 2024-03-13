@@ -1,7 +1,8 @@
 # CA4021 Data Science Final Year Project
 
-**Edward Bolger (20364133)**
-**Stan Goodwin (20449042)**
+**Edward Bolger** (20364133) Email: [edward.bolger25@mail.dcu.ie](edward.bolger25@mail.dcu.ie)
+
+**Stan Goodwin** (20449042) Email: [stan.goodwin6@mail.dcu.ie](stan.goodwin6@mail.dcu.ie)
 
 ## Short Overview
 
