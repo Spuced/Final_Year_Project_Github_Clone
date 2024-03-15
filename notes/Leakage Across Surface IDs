@@ -1,3 +1,6 @@
 It appears that when spectra from the same surface ID are contained within both the training and testing folds of the cross-validation, data is leaked to the model about the status of the spectrum.
 
-Leave P Groups Out and Group K fold can ensure that this cross-contamination does not occur, giving a better evaluation of the model's ability to generalise.
+The samples from a surface all have the same status.
+It could be that the models are learning background information about the surface, then when it recognises the surface in test set, it already knows what status it has.
+
+Leave P Groups Out and Group K fold can ensure that this cross-contamination does not occur, giving a better evaluation of the model's ability to generalise on independent data.
