@@ -55,20 +55,33 @@ def modified_z_score(ys):
 # The next function calculates the average values around the point to be replaced.
 def fixer(y,ma):
     threshold = 7 # binarisation threshold
+    #threshold = 3.5 # binarisation threshold
     spikes = abs(np.array(modified_z_score(y))) > threshold
     y_out = y.copy()
     for i in np.arange(len(spikes)):
+        
         if spikes[i] != 0:
-            w = np.arange(i-ma,i+1+ma)
-            we = w[spikes[w] == 0]
-            if len(we) > 0:  # Check if it has at least one valid value
-                y_out[i] = np.mean(y[we])
+            # Calculate the window range, ensuring it stays within the bounds of the spectrum
+            w_start = max(i - ma, 0)
+            w_end = min(i + ma + 1, len(y))
+            w = np.arange(w_start, w_end)
+            
+            valid_w = w[w < len(spikes)]  # Ensure w doesn't go beyond the length of spikes
+            
+            # Indices within the window that do not correspond to spikes
+            valid_indices = valid_w[~spikes[valid_w]]
+            
+            # If there are valid indices, calculate the mean of 'y' over these indices
+            if len(valid_indices) > 0:
+                y_out[i] = np.mean(y[valid_indices])
+            else:
+                y_out[i] = y[i]
     return y_out
 
 def despike_group(absorbances, ma=20):
     absorbance_data = absorbances.to_numpy()
     despiked_absorbance = fixer(absorbance_data, ma=ma)
-    return(despiked_absorbance)
+    return despiked_absorbance
 
 def asls_baseline_correction(x, lam, p):
         corrected, _ = asls(x, lam=lam, p=p)
