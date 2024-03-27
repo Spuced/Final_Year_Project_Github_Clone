@@ -53,9 +53,8 @@ def modified_z_score(ys):
     return modified_z_scores
     
 # The next function calculates the average values around the point to be replaced.
-def fixer(y,ma):
-    threshold = 7 # binarisation threshold
-    #threshold = 3.5 # binarisation threshold
+def fixer(y,ma, threshold):
+    threshold = threshold # binarisation threshold
     spikes = abs(np.array(modified_z_score(y))) > threshold
     y_out = y.copy()
     for i in np.arange(len(spikes)):
@@ -78,9 +77,9 @@ def fixer(y,ma):
                 y_out[i] = y[i]
     return y_out
 
-def despike_group(absorbances, ma=20):
+def despike_group(absorbances, ma=20, threshold=7):
     absorbance_data = absorbances.to_numpy()
-    despiked_absorbance = fixer(absorbance_data, ma=ma)
+    despiked_absorbance = fixer(absorbance_data, ma=ma, threshold=threshold)
     return despiked_absorbance
 
 def asls_baseline_correction(x, lam, p):
