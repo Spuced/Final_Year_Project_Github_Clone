@@ -2,7 +2,8 @@
 # Set up the dependencies
 import pandas as pd
 import numpy as np
-from pybaselines.whittaker import asls
+from pybaselines.whittaker import asls, iasls, airpls, psalsa
+from pybaselines.polynomial import poly
 
 # This function pivots the data, converting each WaveNumber to a column
 def prepare_wavelength_df(df, absorbance_col, status_col='Status'):
@@ -53,8 +54,7 @@ def modified_z_score(ys):
     return modified_z_scores
     
 # The next function calculates the average values around the point to be replaced.
-def fixer(y,ma, threshold):
-    threshold = threshold # binarisation threshold
+def fixer(y, ma, threshold):
     spikes = abs(np.array(modified_z_score(y))) > threshold
     y_out = y.copy()
     for i in np.arange(len(spikes)):
@@ -84,4 +84,20 @@ def despike_group(absorbances, ma=20, threshold=7):
 
 def asls_baseline_correction(x, lam, p):
         corrected, _ = asls(x, lam=lam, p=p)
+        return corrected
+
+def iasls_baseline_correction(x, lam, p, lam_1):
+        corrected, _ = iasls(x, lam=lam, p=p, lam_1=lam_1)
+        return corrected
+
+def airpls_baseline_correction(x, lam):
+        corrected, _ = airpls(x, lam=lam)
+        return corrected
+
+def poly_baseline_correction(x, poly_order):
+        corrected, _ = poly(x, poly_order=poly_order)
+        return corrected
+
+def psalsa_baseline_correction(x, lam, p):
+        corrected, _ = psalsa(x, lam=lam, p=p)
         return corrected
