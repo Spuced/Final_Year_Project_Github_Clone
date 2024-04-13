@@ -47,39 +47,29 @@ def min_max_scale(absorbances):
     return (absorbances - min_value) / (max_value - min_value)
 
 def modified_z_score(ys):
-    ysb = np.diff(ys) # Differentiated intensity values
-    median_y = np.median(ysb) # Median of the intensity values
-    median_absolute_deviation_y = np.median([np.abs(y - median_y) for y in ysb]) # median_absolute_deviation of the differentiated intensity values
-    modified_z_scores = [0.6745 * (y - median_y) / median_absolute_deviation_y for y in ysb] # median_absolute_deviationmodified z scores
-    return modified_z_scores
-    
-# The next function calculates the average values around the point to be replaced.
+    ysb = np.diff(ys)  # Differentiated intensity values
+    median_y = np.median(ysb)  # Median of the intensity values
+    mad_y = np.median(np.abs(ysb - median_y))  # Median absolute deviation
+    modified_z_scores = 0.6745 * (ysb - median_y) / mad_y
+    return np.concatenate([[0], modified_z_scores])  # Include a placeholder for the first element
+
 def fixer(y, ma, threshold):
-    spikes = abs(np.array(modified_z_score(y))) > threshold
-    y_out = y.copy()
-    for i in np.arange(len(spikes)):
-        
-        if spikes[i] != 0:
-            # Calculate the window range, ensuring it stays within the bounds of the spectrum
-            w_start = max(i - ma, 0)
-            w_end = min(i + ma + 1, len(y))
-            w = np.arange(w_start, w_end)
-            
-            valid_w = w[w < len(spikes)]  # Ensure w doesn't go beyond the length of spikes
-            
-            # Indices within the window that do not correspond to spikes
-            valid_indices = valid_w[~spikes[valid_w]]
-            
-            # If there are valid indices, calculate the mean of 'y' over these indices
-            if len(valid_indices) > 0:
-                y_out[i] = np.mean(y[valid_indices])
-            else:
-                y_out[i] = y[i]
+    spikes = np.abs(modified_z_score(y)) > threshold
+    y_out = np.copy(y)
+    
+    for i in np.where(spikes)[0]:  # Loop over indices where spikes occur
+        w_start = max(i - ma, 0)
+        w_end = min(i + ma + 1, len(y))
+        valid_indices = ~spikes[w_start:w_end]  # Indices within the window that are not spikes
+
+        if np.any(valid_indices):
+            valid_y = y[w_start:w_end][valid_indices]
+            y_out[i] = np.mean(valid_y)
+    
     return y_out
 
 def despike_group(absorbances, ma=20, threshold=7):
-    absorbance_data = absorbances.to_numpy()
-    despiked_absorbance = fixer(absorbance_data, ma=ma, threshold=threshold)
+    despiked_absorbance = fixer(absorbances.to_numpy(), ma=ma, threshold=threshold)
     return despiked_absorbance
 
 def asls_baseline_correction(x, lam, p):
