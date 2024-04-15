@@ -22,7 +22,7 @@ def prepare_wavelength_df(df, absorbance_col, status_col='Status'):
 
     return wavelength_df
 
-# Scale each spectra to its highest peak 
+# Scale each spectra to its highest peak
 def normalise(absorbances):
     max_value = np.max(absorbances)
     normalised_absorbances = absorbances / max_value
@@ -52,24 +52,24 @@ def modified_z_score(ys):
     median_absolute_deviation_y = np.median([np.abs(y - median_y) for y in ysb]) # median_absolute_deviation of the differentiated intensity values
     modified_z_scores = [0.6745 * (y - median_y) / median_absolute_deviation_y for y in ysb] # median_absolute_deviationmodified z scores
     return modified_z_scores
-    
+
 # The next function calculates the average values around the point to be replaced.
 def fixer(y, ma, threshold):
     spikes = abs(np.array(modified_z_score(y))) > threshold
     y_out = y.copy()
     for i in np.arange(len(spikes)):
-        
+
         if spikes[i] != 0:
             # Calculate the window range, ensuring it stays within the bounds of the spectrum
             w_start = max(i - ma, 0)
             w_end = min(i + ma + 1, len(y))
             w = np.arange(w_start, w_end)
-            
+
             valid_w = w[w < len(spikes)]  # Ensure w doesn't go beyond the length of spikes
-            
+
             # Indices within the window that do not correspond to spikes
             valid_indices = valid_w[~spikes[valid_w]]
-            
+
             # If there are valid indices, calculate the mean of 'y' over these indices
             if len(valid_indices) > 0:
                 y_out[i] = np.mean(y[valid_indices])
