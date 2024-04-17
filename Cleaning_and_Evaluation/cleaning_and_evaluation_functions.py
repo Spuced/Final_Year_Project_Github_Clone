@@ -4,6 +4,7 @@ import numpy as np
 from pybaselines.whittaker import asls, iasls, airpls, psalsa
 from pybaselines.polynomial import poly
 from sklearn.model_selection import KFold, GroupKFold, cross_validate 
+from scipy.signal import savgol_filter
 
 # Scale each spectra to its highest peak 
 def normalise(absorbances):
@@ -85,7 +86,19 @@ def psalsa_baseline_correction(x, lam, p):
         corrected, _ = psalsa(x, lam=lam, p=p)
         return corrected
 
-def spectra_cleaning(df, filter_400_1800=True, despike=True, baseline_correct=True, smoothing=True, scaling='vector', despike_ma=10, despike_threshold=7, lam=10**7, p=0.01, window_size=21, poly_order=3):
+def spectra_cleaning(df, **kwargs):
+
+    # Retrieve keyword arguments with default values if they are not provided
+    despike = kwargs.get('despike', True)
+    baseline_correct = kwargs.get('baseline_correct', True)
+    smoothing = kwargs.get('smoothing', True)
+    scaling = kwargs.get('scaling', 'vector')
+    despike_ma = kwargs.get('despike_ma', 10)
+    despike_threshold = kwargs.get('despike_threshold', 7)
+    lam = kwargs.get('lam', 10**7)
+    p = kwargs.get('p', 0.01)
+    window_size = kwargs.get('window_size', 21)
+    poly_order = kwargs.get('poly_order', 3)
 
     # Whitaker Hayes Despiking
     if despike:
@@ -93,8 +106,7 @@ def spectra_cleaning(df, filter_400_1800=True, despike=True, baseline_correct=Tr
 
     # Asymmetric Least Squares Baseline Correction
     if baseline_correct:
-        df['Baseline'] = df.groupby('SpecID')['Absorbance'].transform(lambda x: asls_baseline_correction(x, lam=lam, p=p))
-        df['Absorbance'] = df['Absorbance'] - df['Baseline']
+        df['Absorbance'] = df.groupby('SpecID')['Absorbance'].transform(lambda x: x - asls_baseline_correction(x, lam=lam, p=p))
 
     # Savitsky-Golay Smoothing
     if smoothing:
@@ -110,22 +122,15 @@ def spectra_cleaning(df, filter_400_1800=True, despike=True, baseline_correct=Tr
             df['Absorbance'] = df.groupby('SpecID')['Absorbance'].transform(lambda x: svn_normalise(x))
 
 # This function pivots the data, converting each WaveNumber to a column
-def prepare_wavelength_df(df, include_surface=True, absorbance_col='Absorbance'):
+def prepare_wavelength_df(df, absorbance_col='Absorbance'):
 
     # Pivot the DataFrame to get wavelengths as columns and absorbance values
     wavelength_df = df.pivot(index='SpecID', columns='WaveNumber', values=absorbance_col).reset_index()
     wavelength_df.columns.name = None
 
-    # Merge with the statuses based on SpecID
-    # Include the SurID to perform GroupKFold CV
-    if include_surface:
-        statuses_and_surface = df[['SpecID', 'SurID', 'Status']].drop_duplicates()
-        wavelength_df = pd.merge(wavelength_df, statuses_and_surface, on='SpecID')
-
-    # Ignore SurID if doing KFold CV
-    else:
-        statuses = df[['SpecID', 'Status']].drop_duplicates()
-        wavelength_df = pd.merge(wavelength_df, statuses, on='SpecID')
+    # Merge with the statuses and surfaces based on SpecID
+    statuses_and_surface = df[['SpecID', 'SurID', 'Status']].drop_duplicates()
+    wavelength_df = pd.merge(wavelength_df, statuses_and_surface, on='SpecID')
 
     # Set SpecID as the index
     wavelength_df = wavelength_df.set_index('SpecID')
@@ -135,36 +140,23 @@ def prepare_wavelength_df(df, include_surface=True, absorbance_col='Absorbance')
 # Evaluate a model with either KFold or GroupKFold
 def evaluate_model(df, model, groupkfold=True, n_jobs=-1):
 
+    # Set the Surfaces as groups
+    groups = df['SurID']
+    X = df.drop(['Status', 'SurID'], axis=1)
+    y = df['Status']
+
     # Perform GroupKFold Cross-Validation
     if groupkfold:
 
-        # Set the Surfaces as groups
-        groups = df['SurID']
-        X = df.drop(['Status', 'SurID'], axis=1)
-        y = df['Status']
-    
         # Using GroupKFold for classification tasks
         cv = GroupKFold(n_splits=10)
 
-        # Cross Validate
-        scores = cross_validate(model, X, y, groups=groups, cv=cv, scoring=['accuracy', 'precision_macro', 'recall_macro', 'f1_macro'], n_jobs=-1)
-
     # Perform KFold Cross-Validation
     else:
-        # Set the Surfaces as groups
-        X = df.drop(['Status'], axis=1)
-        y = df['Status']
+        cv = KFold(n_splits=10, random_state=1234, shuffle=True)
 
-        # Using GroupKFold for classification tasks
-        if groupkfold==True:
-            cv = GroupKFold(n_splits=10)
-
-        # Else use KFold
-        else:
-            cv = KFold(n_splits=10, random_state=1234, shuffle=True)
-
-        # Cross Validate
-        scores = cross_validate(model, X, y, cv=cv, scoring=['accuracy', 'precision_macro', 'recall_macro', 'f1_macro'], n_jobs=n_jobs)
+    # Cross Validate
+    scores = cross_validate(model, X, y, groups=groups, cv=cv, scoring=['accuracy', 'precision_macro', 'recall_macro', 'f1_macro'], n_jobs=-1)
 
     # Displaying the results
     print(f"{model.__class__.__name__} Cross-Validation Accuracy: {np.mean(scores['test_accuracy']):.4f} +/- {np.std(scores['test_accuracy']):.4f}")
