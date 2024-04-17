@@ -1,5 +1,0 @@
-WITH "file:///dist.csv" AS uri
-LOAD CSV WITH HEADERS FROM uri AS row
-MATCH (origin:Sample {id: row.src})
-MATCH (destination:Sample {id: row.dst})
-MERGE (origin)-[:Dist {distance: toFloat(row.manhat)}]->(destination)
