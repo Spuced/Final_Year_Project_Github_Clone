@@ -3,6 +3,7 @@ import pandas as pd
 #spectra_df = pd.read_csv("../data/exosomes.raw_spectrum_400-1800.csv")
 spectra_df = pd.read_csv("../data/scaled_cleaned_cnn_spectra.csv")  #lam10**5 p 0.001 w=21 poly=2
 spectra_df
+
 #### **Train a Neural Network on the full spectrum**
 wavelength_df = spectra_df.pivot(index='SpecID', columns='WaveNumber', values='Absorbance').reset_index()
 wavelength_df.columns.name = None
@@ -12,6 +13,7 @@ wavelength_df = wavelength_df.set_index('SpecID')
 wavelength_df.head()
 X = wavelength_df.drop(columns=['Status'])
 y = pd.get_dummies(wavelength_df['Status'])  # One-hot encode target variable
+
 #### **CNN Training**
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
@@ -21,7 +23,7 @@ from sklearn.model_selection import GroupShuffleSplit
 # Split data into training and testing sets ensuring no overlap in SurID
 group_kfold = GroupShuffleSplit(test_size=0.2, n_splits=1, random_state=1234)
 
-# Assuming 'SurID' is a column in X, which is used to group the data
+# Outline the groups for GroupKFold
 groups = X['SurID']
 for train_idx, test_idx in group_kfold.split(X, y, groups):
     X_train_temp, X_test = X.iloc[train_idx], X.iloc[test_idx]

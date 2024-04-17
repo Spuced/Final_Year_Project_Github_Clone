@@ -25,7 +25,7 @@ from tensorflow.keras.optimizers import Adam
 # Split data into training and testing sets ensuring no overlap in SurID
 group_kfold = GroupShuffleSplit(test_size=0.2, n_splits=1, random_state=1234)
 
-# Assuming 'SurID' is a column in X, which is used to group the data
+# Outline the groups for GroupKFold
 groups = X['SurID']
 for train_idx, test_idx in group_kfold.split(X, y, groups):
     X_train_temp, X_test = X.iloc[train_idx], X.iloc[test_idx]
@@ -68,7 +68,7 @@ model = Sequential([
     Dense(10, activation='relu'),
     Dropout(0.4),
 
-    Dense(3, activation='softmax')   # Assuming a 3-class classification problem from your setup
+    Dense(3, activation='softmax')
 ])
 
 # Custom optimizer with specified learning rate and decay, based on the parameters in the paper
