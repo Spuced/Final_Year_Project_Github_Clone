@@ -1,0 +1,55 @@
+## Label Propagation
+
+CALL gds.graph.project(
+    'LabelPropGraph1',
+    ['Normal', 'Hypoglycemia', 'Hyperglycemia'],
+    'LINK',
+    {
+        nodeProperties: ['Widths', 'Prominences'],
+        relationshipProperties: 'DIST'
+    }
+)
+
+CALL gds.labelPropagation.stream('LabelPropGraph1')
+YIELD nodeId, communityId AS Community
+RETURN gds.util.asNode(nodeId).Node_ID AS Name, Community
+ORDER BY Name, Community
+
+## Louvain
+
+CALL gds.graph.project(
+    'LouvGraph1',
+    ['Normal', 'Hypoglycemia', 'Hyperglycemia'],
+    {
+        LINK: {
+            orientation: 'UNDIRECTED'
+        }
+    },
+    {
+        nodeProperties: 'Prominences',
+        relationshipProperties: 'DIST'
+    }
+)
+
+CALL gds.louvain.stream('LouvGraph1')
+YIELD nodeId, communityId, intermediateCommunityIds
+RETURN gds.util.asNode(nodeId).Node_ID AS Name, communityId as Community
+ORDER BY Name ASC
+
+## Leiden
+# Same graph projection as Louvain
+
+CALL gds.leiden.stream('LouvGraph1', { randomSeed: 19 })
+YIELD nodeId, communityId
+RETURN gds.util.asNode(nodeId).Node_ID AS Name, communityId as Community
+ORDER BY Name ASC
+
+## Strongly Connected Components
+
+CALL gds.graph.project('SCCGraph1', ['Normal', 'Hypoglycemia', 'Hyperglycemia'], 'LINK')
+
+CALL gds.scc.stream('SCCGraph1', {})
+YIELD nodeId, componentId
+RETURN gds.util.asNode(nodeId).Node_ID AS Name, componentId AS Community
+ORDER BY Community DESC
+
