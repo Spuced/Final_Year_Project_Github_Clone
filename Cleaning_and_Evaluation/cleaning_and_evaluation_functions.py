@@ -119,7 +119,7 @@ def spectra_cleaning(df, **kwargs):
         elif scaling == 'vector':
             df['Absorbance'] = df.groupby('SpecID')['Absorbance'].transform(lambda x: vector_normalise(x))
         else:
-            df['Absorbance'] = df.groupby('SpecID')['Absorbance'].transform(lambda x: svn_normalise(x))
+            df['Absorbance'] = df.groupby('SpecID')['Absorbance'].transform(lambda x: snv_normalise(x))
 
 # This function pivots the data, converting each WaveNumber to a column
 def prepare_wavelength_df(df, absorbance_col='Absorbance'):
