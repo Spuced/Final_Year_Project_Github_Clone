@@ -19,7 +19,7 @@ def vector_normalise(absorbances):
     return normalized_absorbances
 
 # Scale each spectra to the mean and standard deviation of the absorbance
-def svn_normalise(absorbances):
+def snv_normalise(absorbances):
     mean = absorbances.mean()
     std = absorbances.std()
     return (absorbances - mean) / std
