@@ -30,7 +30,7 @@ for train_idx, test_idx in group_kfold.split(X, y, groups):
     y_train_temp, y_test = y.iloc[train_idx], y.iloc[test_idx]
 
 # Re-apply GroupShuffleSplit on the preliminary training set to further split it into training and validation
-group_kfold_val = GroupShuffleSplit(test_size=0.25, n_splits=1, random_state=1234)  # Adjust the test_size as necessary
+group_kfold_val = GroupShuffleSplit(test_size=0.25, n_splits=1, random_state=1234)
 for train_idx, val_idx in group_kfold_val.split(X_train_temp, y_train_temp, X_train_temp['SurID']):
     X_train, X_val = X_train_temp.iloc[train_idx], X_train_temp.iloc[val_idx]
     y_train, y_val = y_train_temp.iloc[train_idx], y_train_temp.iloc[val_idx]
@@ -60,13 +60,13 @@ model = Sequential([
     MaxPooling1D(pool_size=2),
     Dropout(0.5),
     BatchNormalization(),
-    
+
     Conv1D(filters=128, kernel_size=3, activation='relu'),
     Conv1D(filters=128, kernel_size=3, activation='relu'),
     MaxPooling1D(pool_size=2),
     Dropout(0.5),
     BatchNormalization(),
-    
+
     Flatten(),
     Dense(512, activation='relu'),
     Dropout(0.5),
@@ -83,7 +83,7 @@ model = Sequential([
 #     Flatten(),
 #     Dense(128, activation='relu'),
 #     Dropout(0.5),   # Adding dropout layer with dropout rate of 0.5
-#     Dense(3, activation='softmax')  
+#     Dense(3, activation='softmax')
 # ])
 # Compile the model
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])

@@ -32,12 +32,12 @@ for train_idx, test_idx in group_kfold.split(X, y, groups):
     y_train_temp, y_test = y.iloc[train_idx], y.iloc[test_idx]
 
 # Re-apply GroupShuffleSplit on the preliminary training set to further split it into training and validation
-group_kfold_val = GroupShuffleSplit(test_size=0.25, n_splits=1, random_state=1234)  # Adjust the test_size as necessary
+group_kfold_val = GroupShuffleSplit(test_size=0.25, n_splits=1, random_state=1234)
 for train_idx, val_idx in group_kfold_val.split(X_train_temp, y_train_temp, X_train_temp['SurID']):
     X_train, X_val = X_train_temp.iloc[train_idx], X_train_temp.iloc[val_idx]
     y_train, y_val = y_train_temp.iloc[train_idx], y_train_temp.iloc[val_idx]
 
-# Remove the SurID column if it should not be used as a feature for training
+# Remove the SurID
 X_train = X_train.drop(columns=['SurID'])
 X_test = X_test.drop(columns=['SurID'])
 X_val = X_val.drop(columns=['SurID'])
@@ -50,7 +50,7 @@ X_val = X_val.values.reshape(X_val.shape[0], X_val.shape[1], 1)
 model = Sequential([
     Conv1D(filters=64, kernel_size=3, activation='relu', input_shape=(X_train.shape[1], 1)),
     MaxPooling1D(pool_size=2),
-    
+
     Conv1D(filters=64, kernel_size=3, activation='relu'),
     MaxPooling1D(pool_size=2),
 
