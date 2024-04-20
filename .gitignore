@@ -3,3 +3,6 @@ data/**
 
 # Allow the gitkeep just so the folder gets uploaded
 !data/.gitkeep
+
+# Ignore all log files by extension
+*.log
