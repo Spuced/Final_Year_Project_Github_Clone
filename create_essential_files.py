@@ -14,7 +14,7 @@ df = pd.read_csv("./data/exosomes.raw_spectrum_1.csv")
 
 effective_df = df[(df['WaveNumber'] >= 400) & (df['WaveNumber'] <= 1800)]
 
-effective_df.to_csv("../data/exosomes.raw_spectrum_400-1800.csv", index=False)
+effective_df.to_csv("./data/exosomes.raw_spectrum_400-1800.csv", index=False)
 
 # Clean the spectra using the default parameters in case some files require pre-cleaned spectra.
 print("Cleaning the spectra with default parameters")
