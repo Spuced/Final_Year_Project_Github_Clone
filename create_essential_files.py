@@ -17,6 +17,21 @@ effective_df = df[(df['WaveNumber'] >= 400) & (df['WaveNumber'] <= 1800)]
 effective_df.to_csv("./data/exosomes.raw_spectrum_400-1800.csv", index=False)
 
 # Clean the spectra using the default parameters in case some files require pre-cleaned spectra.
-print("Cleaning the spectra with default parameters")
-spectra_cleaning(df)
+print("Cleaning the spectra")
+
+cleaning_params = {
+    'despike': True,
+    'baseline_correct': True,
+    'smoothing': True,
+    'scaling': 'snv',
+    'despike_ma': 25,
+    'despike_threshold': 3.75,
+    'lam': 10**7,
+    'p': 0.05,
+    'window_size': 51,
+    'poly_order': 3
+}
+
+spectra_cleaning(df, **cleaning_params)
+
 df.to_csv("./data/current_clean_spectrum.csv", index=False)

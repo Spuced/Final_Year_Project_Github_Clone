@@ -81,7 +81,7 @@ for train_index, test_index in group_kfold.split(X, y, groups):
 #     Dense(3, activation='softmax')
 # ])
 
-# # Custom optimizer with specified learning rate and decay, based on the parameters in the paper
+# Custom optimizer based on the parameters in the paper
 # learning_rate = 9.8e-4
 # decay_rate = 0.2
 # optimizer = Adam(learning_rate=learning_rate, decay=decay_rate / 200)
