@@ -5,11 +5,12 @@ To run the code in this repository, you will need to install the following Pytho
 - `pandas`
 - `numpy`
 - `scikit-learn`
+- `scipy`
 - `optuna`
 - `pybaselines`
 - `mlxtend`
 - `neo4j`
-- `tensorflow
+- `tensorflow`
 
 ## Setting Up Neo4j
 
