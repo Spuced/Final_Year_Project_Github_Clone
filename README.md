@@ -32,4 +32,8 @@ Check the respective folders for more details.
 
 #### Effect of PageRank on Spectra Within a Surface
 
-[Most Central Spectra](/images/)
+[Most Central Spectra](/images/most_central_spectra.png)
+
+[Least Central Spectra](/images/least_central_spectra.png)
+
+[Most Predictive WaveNumbers](/images/feature_selection.png)
