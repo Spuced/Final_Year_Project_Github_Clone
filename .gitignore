@@ -6,3 +6,7 @@ data/**
 
 # Ignore all log files by extension
 *.log
+
+# Allow the feature files to be uploaded as they are very small
+!data/best_accuracy_features_selection.csv
+!data/best_f1_features_selection.csv
