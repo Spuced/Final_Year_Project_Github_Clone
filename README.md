@@ -10,7 +10,7 @@ Current studies into the use of machine learning for the classification of disea
 
 ### Repository Structure:
 
-- [**`archive`**](/Archive/): Contains old notebooks used in development that have been superceded.
+- [**`Archive`**](/Archive/): Contains old notebooks used in development that have been superceded.
 - [**`Baseline_Approach`**](/Baseline_Approach/): Contains cleaning experiments for the full wavelength and for peak features using KFold cross-validation.
 - [**`Cleaning_and_Evaluation`**](/Cleaning_and_Evaluation/): A **Python package** containing cleaning and evaluation functions used in all notebooks.
 - [**`Feature_Selection`**](/Feature_Selection/): Contains notebooks for exploring a variety of feature selection methods.
