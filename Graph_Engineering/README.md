@@ -1,6 +1,6 @@
 # Graph Engineering
 
-Here you will find a collection of Jupyter notebooks showcasing different methods of constructing graph databases for feature extraction to be used in the machine classification of exosomes based on their Raman Spectra.
+Here you will find a collection of Jupyter notebooks showcasing different methods of constructing graph databases for feature extraction to be used in the machine classification of exosomes based on their Raman Spectra. This folder contains the three graph structures highligthed in the report. You can find other graph structures we had built in the [Archive](../Archive/) folder.
 
 ## Graph Databases
 
@@ -20,3 +20,10 @@ Each graph is evaluated using two techniques:
 1. **KFold Cross Validation**: Data is divided into K folds, with each fold serving as a validation set while the rest are used for training. This process is repeated K times, ensuring all data is used for both training and validation.
 
 2. **GroupKFold Cross Validation**: Similar to KFold, but preserves the grouping of data samples. This is used to prevent data leakage across seperate surfaces.
+
+## Setting Up Neo4j
+
+Ensure that a Neo4j DBMS is set up. Configure the environment with the following variables to point to your Neo4j instance:
+
+- `NEO4J_Directory`: Specifies the root folder of the chosen Neo4j DBMS
+- `NEO4J_Password`: The password for accessing the Neo4j DBMS.
