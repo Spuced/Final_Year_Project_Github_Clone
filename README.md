@@ -29,3 +29,7 @@ Current studies into the use of machine learning for the classification of disea
 Run [create_essential_files.py](/create_essential_files.py) after placing raw data into the [data](/data/) folder to create files need to run notebooks in this project. Package requirements are detailed in [requirements](/requirements.md).
 
 Check the respective folders for more details.
+
+#### Effect of PageRank on Spectra Within a Surface
+
+[Most Central Spectra](/images/)
