@@ -17,13 +17,13 @@ Current studies into the use of machine learning for the classification of disea
 - [**`Final_Results`**](/Final_Results/): Contains notebooks that evaluate the best approaches, outlied in the report, found through Grid Search, Bayesian Search and Forward Feature Selection.
 - [**`Graph_Engineering`**](/Graph_Engineering/): Contains the notebooks used to create the graph structures, and extract metrics from Neo4j.
 - [**`GroupKFold_Baseline_Approach`**](/GroupKFold_Baseline_Approach/): Contains cleaning and model experiments for the full wavelength and peak feature approaches, evaluated using GroupKFold cross-validation.
-- [**`Images`**](/Images/): Contains visualisations of some different approaches.
 - [**`Neural Networks`**](/Neural%20Networks/): Contains experiments to classify spectra using neural approaches.
 - [**`Notes`**](/Notes/): A folder used for shorthand notes and observations.
 - [**`Outlier_Detection`**](/Outlier_Detection/): Contain different methods for outlier detection, including [PageRank Filter](/Outlier_Detection/PageRank_Filter_Before_Clean.ipynb).
 - [**`Parameter_Searches`**](/Parameter_Searches/): Contains experiments for a variety of feature selection approaches.
 - [**`data`**](/data/): Place raw data into this folder and then run [create_essential_files.py](/create_essential_files.py).
 - [**`docs`**](/docs/): Contains project documentation.
+- [**`images`**](/images/): Contains visualisations of some different approaches.
 
 
 
