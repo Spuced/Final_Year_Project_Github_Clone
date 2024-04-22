@@ -6,11 +6,7 @@
 
 ## Abstract
 
-Current studies into the use of machine learning for the classification of disease, based on the Raman spectra of exosomes have claimed near perfect classification accuracy. In this paper we explain a simple validation error that can result in dramatically overestimated model performance. We then outline some novel spectral processing tech- niques utilising graph databases and feature selection, that improve the actual generalisation ability of these models.
-
-## Short Overview
-
-This project aims to test the use of feature engineering and graph databases to classify disease, based on the Raman spectral 'fingerprint' of exosomes, small particles emitted by cells.
+Current studies into the use of machine learning for the classification of disease, based on the Raman spectra of exosomes have claimed near perfect classification accuracy. In this project we explain a simple validation error that can result in dramatically overestimated model performance. We then outline some novel spectral processing techniques utilising graph databases and feature selection, that improve the actual generalisation ability of these models.
 
 ### Repository Structure:
 
@@ -30,6 +26,6 @@ This project aims to test the use of feature engineering and graph databases to 
 
 
 
-Run [create_essential_files.py](/create_essential_files.py) after placing raw data into [`data`](/data/) to create files need to run notebooks in this project. Package requirements are detailed in [requirements](/requirements.md).
+Run [create_essential_files.py](/create_essential_files.py) after placing raw data into the [data](/data/) folder to create files need to run notebooks in this project. Package requirements are detailed in [requirements](/requirements.md).
 
 Check the respective folders for more details.
