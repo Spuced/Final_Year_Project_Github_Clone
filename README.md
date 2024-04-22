@@ -30,10 +30,12 @@ Run [create_essential_files.py](/create_essential_files.py) after placing raw da
 
 Check the respective folders for more details.
 
-#### Effect of PageRank on Spectra Within a Surface
+#### Effect of PageRank on spectra within a surface:
 
 ![Most Central Spectra](/images/most_central_spectra.png)
 
 ![Least Central Spectra](/images/least_central_spectra.png)
+
+#### Most predictive WaveNumbers found through feature selection: 
 
 ![Most Predictive WaveNumbers](/images/feature_selection.png)
