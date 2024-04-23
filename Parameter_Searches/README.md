@@ -1,4 +1,4 @@
-# Parameters Searchs
+# Parameter Searches
 
 This folder outlines different GridSearch and Bayesian Search carried out to find the optimal cleaning and model parameters as well as the optimal PageRank thresholds. Seperate searches tune for either F1 score or accuracy.
 
