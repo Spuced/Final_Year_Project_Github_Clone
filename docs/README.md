@@ -1,3 +1,1 @@
-Documentation for your project should be placed in this directory.
-
-A [guide](project.md) to thinking about your project ahead of your approval is included.
+This folder contains the initial project proposal, and the final written report.
